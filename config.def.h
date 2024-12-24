@@ -66,7 +66,7 @@ static const char unknown_str[] = "n/a";
 static const struct arg args[] = {
 	/* function format          argument */
         { run_command,         "󰣇 %s ", "uname -a | awk '{print $3}' | awk -F'-' '{print $1}'" },
-        { cpu_perc,             "󰻠 \uf2db %s%% ",      NULL },
+        { cpu_perc,             "\uf2db %s%% ",      NULL },
         { run_command,             "\uf538 %s ",     "free -h | awk '/^内存/ { print $3 }'" },
         { netspeed_tx,             "󰛶 %s/s ",      "enp0s31f6" },
         { netspeed_rx,             "󰛴 %s/s ",     "enp0s31f6" },
