@@ -65,5 +65,22 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ datetime, "%s",           "%F %T" },
+        { run_command,         "󰣇 %s ", "uname -a | awk '{print $3}' | awk -F'-' '{print $1}'" },
+        { cpu_perc,             "󰻠 \uf2db %s%% ",      NULL },
+        { run_command,             "\uf538 %s ",     "free -h | awk '/^内存/ { print $3 }'" },
+        { netspeed_tx,             "󰛶 %s/s ",      "enp0s31f6" },
+        { netspeed_rx,             "󰛴 %s/s ",     "enp0s31f6" },
+/*        { netspeed_tx,             "󰛶 %s/s ",      "wlp2s0" },
+        { netspeed_rx,             "󰛴 %s/s ",     "wlp2s0" },*/
+/*        { run_command,          " %s%% ",      "xbacklight -get" },
+        { ram_perc,             "(%s%%) ",      NULL },
+        { battery_perc,         " %s%%",       "BAT0" },
+        { battery_state,        "(%s) ",        "BAT0" },
+        { run_command,          "  %s ",        vol },
+        { run_command,         " %s", "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1" },*/
+        { run_command,         " %s", "pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}'" },
+        { temp,             "  %s°C ",      "/sys/class/thermal/thermal_zone0/temp" },
+/*        { run_command,          " %s ",        mic },
+        { keymap,               " %s ",        NULL },*/
+        { run_command,         "󰃰 %s", "date | awk '{print $1,$2,$3,$4,$5}'" },
 };
